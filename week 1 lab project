@@ -1,0 +1,726 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "46235293",
+      "cell_type": "markdown",
+      "source": "> # CST1510 Programming for data communication and networks\n> # Week 1 Lab – Python Foundations\n<hr style=\"border:2px solid gray\">\n\nThis session introduces Python’s core building blocks: variables, data types, and input/output operations. These fundamentals support all later work in this module.\n\n---\n\n## Topics\n- Variables and data types (`int`, `float`, `str`, `bool`)\n- Input (`input()`) and output (`print()`), single/double quotes and escape sequences\n- Comments and basic Python syntax (PEP8 naming)\n- Numeric and augmented assignment operators\n- Built-in functions (`type`, `len`, `round`, `min`, `max`, `sum`)\n- Importing simple built-in modules\n\n---\n\n## Lab Structure\nTasks are grouped by difficulty:\n- **Threshold** – essential skills\n- **Typical** – applied tasks\n- **Excellent** – extended challenges\n- **Stretch (Optional)** – enrichment problems\n\nAt the end, select 1–2 tasks for your portfolio.\n",
+      "metadata": {}
+    },
+    {
+      "id": "0f50cc49",
+      "cell_type": "markdown",
+      "source": "## Problem-Solving & Pseudocode (Brief)\n\n1. **Inputs/Outputs** – identify required inputs (types/units) and desired outputs (format/precision).\n2. **Steps** – list actions in order: read → convert → compute → display.\n3. **Translate** – convert each step to code with clear variable names and f-strings.\n4. **Test** – try typical and edge values; verify units and formatting.\n\n**Worked example – Rectangle calculator**\n\n- Inputs: width, height (numbers)  \n- Outputs: area and perimeter (2 d.p.)\n\n```python\nwidth = float(input(\"Width: \"))\nheight = float(input(\"Height: \"))\narea = width * height\nperimeter = 2 * (width + height)\nprint(f\"Area = {area:.2f}\")\nprint(f\"Perimeter = {perimeter:.2f}\")\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "3020503a",
+      "cell_type": "markdown",
+      "source": "# Threshold Tasks",
+      "metadata": {}
+    },
+    {
+      "id": "8a5e0d7a",
+      "cell_type": "markdown",
+      "source": "### Threshold 1. Questionnaire\n\nWrite a program that asks for name, interest, nationality, course, and programming experience, then prints a formatted summary using escape sequences (`\\n`, `\\t`).\n\n**Example Output:**\n```\nUser Information:\n\tName: Alice\n\tInterest: Security\n\tNationality: UK\n\tCourse: Cyber\n\tExperience: Beginner\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "252187fe",
+      "cell_type": "code",
+      "source": "# Your code here\nname = input(\"Enter your name: \")\ninterest = input(\"Enter your interest: \")\nnationality = input(\"Enter your nationality: \")\ncourse = input(\"Enter your course: \")\nexperience = input(\"Enter your programming experience level: \")\n\n# Display formatted summary\nprint(\"\\nUser Information:\")\nprint(f\"\\tName: {name}\")\nprint(f\"\\tInterest: {interest}\")\nprint(f\"\\tNationality: {nationality}\")\nprint(f\"\\tCourse: {course}\")\nprint(f\"\\tExperience: {experience}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter your name:  Raghav\nEnter your interest:  football\nEnter your nationality:  indian\nEnter your course:  data science and AI \nEnter your programming experience level:  intermediate \n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "\nUser Information:\n\tName: Raghav\n\tInterest: football\n\tNationality: indian\n\tCourse: data science and AI \n\tExperience: intermediate \n"
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "8e74c7eb",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "1537ed4a",
+      "cell_type": "markdown",
+      "source": "### Threshold 2. Rectangle Area & Perimeter\n\nCalculate and print the area and perimeter of a rectangle using fixed values: width = 4.5 and height = 7.9.\nFormulas: `area = width * height`, `perimeter = 2 * (width + height)`.\n\n**Example Output:**\n```\nArea = 35.55\nPerimeter = 24.80\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "bd716309",
+      "cell_type": "code",
+      "source": "# Your code here\n# Fixed values\nwidth = 4.5\nheight = 7.9\n\n# Calculate area and perimeter\narea = width * height\nperimeter = 2 * (width + height)\n\n# Print results\nprint(\"Area =\", round(area, 2))\nprint(\"Perimeter =\", round(perimeter, 2))",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Area = 35.55\nPerimeter = 24.8\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "957ef0e9",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "3152ebe8",
+      "cell_type": "markdown",
+      "source": "### Threshold 3. Convert Pounds to Kilograms\n\nAsk the user for a value in pounds, convert to kilograms using `1 lb = 0.454 kg`, and print the result.\n\n**Example Output:**\n```\n55.5 pounds is 25.197 kilograms\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "bfff5efd",
+      "cell_type": "code",
+      "source": "# Your code here# Ask user for input in pounds\npounds = float(input(\"Enter weight in pounds: \"))\n\n# Convert to kilograms\nkilograms = pounds * 0.454\n\n# Print the result\nprint(f\"{pounds} pounds is {round(kilograms, 3)} kilograms\")\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter weight in pounds:  68\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "68.0 pounds is 30.872 kilograms\n"
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "cdcf9c63",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "c705244b",
+      "cell_type": "markdown",
+      "source": "### Threshold 4. Convert Feet to Meters\n\nAsk the user for a value in feet, convert to meters using `1 ft = 0.305 m`, and print the result.\n\n**Example Output:**\n```\n16.5 feet is 5.0325 meters\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "152aa0b0",
+      "cell_type": "code",
+      "source": "# Your code here\n\nfeet = float(input(\"Enter length in feet: \"))\n\n# Convert to meters\nmeters = feet * 0.305\n\n\nprint(f\"{feet} feet is {round(meters, 4)} meters\")\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter length in feet:  6.2\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "6.2 feet is 1.891 meters\n"
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "2f1aa3f1",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "ea33a501",
+      "cell_type": "markdown",
+      "source": "### Quick Check (no code submission)\n- What data type does `input()` return? Use `type(input(\"x\"))` to verify.  \n- Show one example of an escape sequence in `print()`.  \n- What is the difference between `/` and `//`? Provide a one-line example for each.  \n",
+      "metadata": {}
+    },
+    {
+      "id": "673b50d8",
+      "cell_type": "markdown",
+      "source": "# Typical Tasks",
+      "metadata": {}
+    },
+    {
+      "id": "f6424ef5",
+      "cell_type": "markdown",
+      "source": "### Typical 1. Total Time to Watch a Series\n\nCompute total viewing time (no breaks) for a series:\n- 5 seasons, 10 episodes per season\n- Season 1: 45 minutes 35 seconds per episode\n- Seasons 2–5: 35 minutes 15 seconds per episode\nDisplay the total as hours, minutes, and seconds.\n\n**Example Output:**\n```\nTotal time: 39h 30m 0s\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "faefbb2d",
+      "cell_type": "code",
+      "source": "# Your code here\n\nseasons = 5\nepisodes_per_season = 10\n\n\nseason1_time = (45 * 60) + 35  # seconds per episode\nseason1_total = season1_time * episodes_per_season\n\n\nseason2_5_time = (35 * 60) + 15\nseason2_5_total = season2_5_time * episodes_per_season * 4\n\n\ntotal_seconds = season1_total + season2_5_total\n\n# Convert to hours, minutes, and seconds\nhours = total_seconds // 3600\nminutes = (total_seconds % 3600) // 60\nseconds = total_seconds % 60\n\n# Print result\nprint(f\"Total time: {hours}h {minutes}m {seconds}s\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Total time: 31h 5m 50s\n"
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "519cd24e",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "c4ef7418",
+      "cell_type": "markdown",
+      "source": "### Typical 2. Savings Projection (3 Years)\n\nCompute final savings after 3 years given:\n- Save £10 every week for 3 years\n- Year 1 bonus: +£20 each week\n- Every 2 weeks: −£0.50 (sister)\nAssume 52 weeks per year; use arithmetic and augmented assignment; no conditionals.\n\n**Example Output:**\n```\nFinal savings after 3 years: £4689.50\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "81904cff",
+      "cell_type": "code",
+      "source": "# Your code here\n\nweekly_saving = 10\nbonus_year1 = 20\nsister_deduction = 0.50\nweeks_per_year = 52\nyears = 3\n\n# Year 1 total\nyear1_saving = weeks_per_year * (weekly_saving + bonus_year1) - (weeks_per_year / 2) * sister_deduction\n\n# Years 2 & 3 total\nother_years_saving = (years - 1) * (weeks_per_year * weekly_saving - (weeks_per_year / 2) * sister_deduction)\n\n# Final savings\ntotal_savings = year1_saving + other_years_saving\n\n\nprint(f\"Final savings after 3 years: £{total_savings:.2f}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Final savings after 3 years: £2561.00\n"
+        }
+      ],
+      "execution_count": 6
+    },
+    {
+      "id": "04ccdebb",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "14668a70",
+      "cell_type": "markdown",
+      "source": "### Typical 3. Cyber: HTTP Log Composer\n\nAsk for IP, method, path, status, and bytes, then print a single combined log line (Apache-style).\n\n**Example Output:**\n```\n192.168.1.10 - \"POST /auth\" 401 512\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "41d2eb1a",
+      "cell_type": "code",
+      "source": "# Your code here\nIP = input(\"Enter your IP: \")\nmethod = input(\"Enter your method: \")\npath = input(\"Enter your path: \")\nstatus = input(\"Enter your status: \")\nbytes = input(\"Enter your bytes: \")\n\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter your IP:  192.168.1.10\nEnter your method:  -\nEnter your path:  \"POST/auth\"\nEnter your status:  401\nEnter your bytes:  502\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "\nUser Information:\n\tIP: 192.168.1.10\n\tmethod: -\n\tpath: \"POST/auth\"\n\tstatus: 401\n\tbytes: 502\n"
+        }
+      ],
+      "execution_count": 7
+    },
+    {
+      "id": "a5d1b66a",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "d66fb772",
+      "cell_type": "markdown",
+      "source": "### Typical 4. Data Science: Dataset Metadata\n\nAsk for dataset name, rows, and columns. Print:\n- dataset name in quotes\n- rows and columns\n- total cells (rows × columns)\n\n**Example Output:**\n```\n\"sales.csv\"\nRows: 120\nColumns: 8\nCells: 960\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "9e838d90",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "f011c7c9",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "0b5a2896",
+      "cell_type": "markdown",
+      "source": "### Typical 5. IT: INI-style Config Printer\n\nAsk for three `key=value` pairs (via separate prompts) and print them as an INI block with indentation.\n\n**Example Output:**\n```\n[config]\n\tmax_connections = 200\n\ttimeout = 30\n\tregion = eu-west-2\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "8dd7f7dd",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "5ad7a937",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "ee6922d4",
+      "cell_type": "markdown",
+      "source": "# Excellent Tasks",
+      "metadata": {}
+    },
+    {
+      "id": "830f3374",
+      "cell_type": "markdown",
+      "source": "### Excellent 1. Cyber: Timestamped Auth Event\n\nAsk for a username and action (e.g., `LOGIN` or `LOGOUT`) and print a timestamped event line.\n\n**Example Output:**\n```\n[2025-09-17 14:20:15] LOGIN user=alice\n```\n\n\n*Optional hint:* `from datetime import datetime; datetime.now().strftime(...)`\n",
+      "metadata": {}
+    },
+    {
+      "id": "90723ccf",
+      "cell_type": "code",
+      "source": "# Your code here\n\n# Ask for username and action\nusername = input(\"Enter username: \")\naction = input(\"Enter action (LOGIN or LOGOUT): \")\n\n\ntimestamp = datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n\n\nprint(f\"[{timestamp}] {action.upper()} user={username}\")\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter username:  alice\nEnter action (LOGIN or LOGOUT):  login\n"
+        },
+        {
+          "ename": "<class 'NameError'>",
+          "evalue": "name 'datetime' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "Cell \u001b[0;32mIn[8], line 8\u001b[0m\n\u001b[1;32m      4\u001b[0m username \u001b[38;5;241m=\u001b[39m \u001b[38;5;28minput\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mEnter username: \u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[1;32m      5\u001b[0m action \u001b[38;5;241m=\u001b[39m \u001b[38;5;28minput\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mEnter action (LOGIN or LOGOUT): \u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m----> 8\u001b[0m timestamp \u001b[38;5;241m=\u001b[39m \u001b[43mdatetime\u001b[49m\u001b[38;5;241m.\u001b[39mnow()\u001b[38;5;241m.\u001b[39mstrftime(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m%\u001b[39m\u001b[38;5;124mY-\u001b[39m\u001b[38;5;124m%\u001b[39m\u001b[38;5;124mm-\u001b[39m\u001b[38;5;132;01m%d\u001b[39;00m\u001b[38;5;124m \u001b[39m\u001b[38;5;124m%\u001b[39m\u001b[38;5;124mH:\u001b[39m\u001b[38;5;124m%\u001b[39m\u001b[38;5;124mM:\u001b[39m\u001b[38;5;124m%\u001b[39m\u001b[38;5;124mS\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[1;32m     11\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m[\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mtimestamp\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m] \u001b[39m\u001b[38;5;132;01m{\u001b[39;00maction\u001b[38;5;241m.\u001b[39mupper()\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m user=\u001b[39m\u001b[38;5;132;01m{\u001b[39;00musername\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m)\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'datetime' is not defined"
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 8
+    },
+    {
+      "id": "89c03a65",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "d7d50011",
+      "cell_type": "markdown",
+      "source": "### Excellent 2. Data Science: Mini Statistics Report\n\nAsk for five numeric values (space-separated). Print the values, total, mean, median, and sample standard deviation.\n\n**Example Output:**\n```\nValues: 80, 90, 70, 85, 75\nTotal = 400.00\nMean = 80.00\nMedian = 80.00\nStd Dev = 7.91\n```\n\n\n*Optional hint:* `import statistics as stats`\n",
+      "metadata": {}
+    },
+    {
+      "id": "9f837636",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "03748c42",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "78f66754",
+      "cell_type": "markdown",
+      "source": "### Excellent 3. IT: Path Decomposition Report\n\nAsk for a file or directory path and print its absolute path, parent, name, stem, and suffix.\n\n**Example Output:**\n```\nAbsolute path: /home/user/project/service.log\nParent: /home/user/project\nName: service.log\nStem: service\nSuffix: .log\n```\n\n\n*Optional hint:* `from pathlib import Path`\n",
+      "metadata": {}
+    },
+    {
+      "id": "7fc40749",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "7027707b",
+      "cell_type": "code",
+      "source": "from pathlib import Path\ninp = input(\"Enter a path: \")\np = Path(inp).expanduser().resolve()\n#...",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "f832c3c7",
+      "cell_type": "markdown",
+      "source": "### Excellent 4. System Info Banner\n\nAsk for a hostname and print OS and Python version as a simple banner (one value per line).\n\n**Example Output:**\n```\nHost: server01\nOS: Linux\nPython: 3.11.5\n```\n\n\n*Optional hint:* `import platform; platform.system(); platform.python_version()`\n",
+      "metadata": {}
+    },
+    {
+      "id": "41856179",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "3119c322",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "b66538c7",
+      "cell_type": "markdown",
+      "source": "# Stretch ",
+      "metadata": {}
+    },
+    {
+      "id": "f17624de",
+      "cell_type": "markdown",
+      "source": "### Stretch 1. Sum of First n Integers\n\nAsk for a positive integer `n` and compute the sum `n*(n+1)//2`. Print the result.\n\n**Example Output:**\n```\nSum of 1..10 = 55\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "6ebbf331",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "fc8b5ee6",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "8240384a",
+      "cell_type": "markdown",
+      "source": "### Stretch 2. Pentagon Area\n\nAsk for the side length `s` and compute the area: `area = 5*s**2 / (4*tan(pi/5))`. Print to 2 d.p.\n\n**Example Output:**\n```\nArea = 172.05\n```\n\n\n*Optional hint:* `from math import tan, pi`\n",
+      "metadata": {}
+    },
+    {
+      "id": "91afa28f",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "6b722109",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "63a761ab",
+      "cell_type": "markdown",
+      "source": "### Stretch 3. Population Projection (5 Years)\n\nAssume current population is 312032486 and 1 year = 365 days.\nRates: birth every 7s, death every 13s, immigrant every 45s.\nCompute projected population for each of the next 5 years using integer division (`//`).\n\n**Example Output:**\n```\nYear 1: 315,xxx,xxx\n...\nYear 5: ...\n```\n\n\n*Optional hint:* Compute yearly net change once; then add each year.\n",
+      "metadata": {}
+    },
+    {
+      "id": "ab5fe88a",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "598d0525",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "cfbbca9b",
+      "cell_type": "markdown",
+      "source": "### Stretch 4. Payroll Statement\n\nAsk for: employee name, hours worked, hourly rate, federal tax rate, state tax rate.\nPrint a formatted payroll slip with gross pay, each deduction, and net pay (2 d.p.).\n\n**Example Output:**\n```\nEmployee: Smith\nGross pay: £97.50\nFederal withholding: £19.50\nState withholding: £8.78\nNet pay: £69.22\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "296295c6",
+      "cell_type": "code",
+      "source": "# Your code here\n",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "71150e1a",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "collapsed": true,
+        "hide_input": true,
+        "jupyter": {
+          "source_hidden": true,
+          "outputs_hidden": true
+        },
+        "tags": [
+          "solution",
+          "collapse"
+        ]
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "2c051f56",
+      "cell_type": "markdown",
+      "source": "---\n\n## Portfolio\nSelect one or two completed activities that best demonstrate this week’s learning. Polish the code (naming, formatting, comments) so you can commit them to Git in later weeks\n",
+      "metadata": {}
+    },
+    {
+      "id": "5159dbd1",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}

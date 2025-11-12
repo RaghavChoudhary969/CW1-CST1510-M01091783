@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "5bd1e709-03ff-4a38-afb4-112cdcad83d0",
+      "cell_type": "markdown",
+      "source": "> # CST1510 Programming for data communication and networks\n> ## Week 2: Control Structures (Selection & Iteration) + Lists\n> ## LAB ACTIVITY\n\n<hr style=\"border:2px solid gray\">\n",
+      "metadata": {}
+    },
+    {
+      "id": "8c98326c-84fc-433c-90f1-84fcd44827be",
+      "cell_type": "markdown",
+      "source": "Welcome to your second Python lab session! This week, we'll focus on Python's **Conditional statements (if, elif, else)**, **loops (for, while)** and basic **list** operations.\n\nBy the end of this session, you'll be well-equipped to move forward in your Python journey.\n\n### Topics Covered:\n\n- **Learn to control the flow of your programs:** Understand how to make your code smarter by using conditional statements and loops.\n\n- **Handle lists effectively:** Manage and manipulate data collections to create more efficient programs.\n\n\nOnce you’ve completed the tasks, select one or two activities demonstrating what you learned this week to include in your portfolio.\n\nRemember, your portfolio should reflect your comprehension of variables, data types, and basic input/output operations—so choose wisely!\n<hr style=\"border:1px solid gray\">",
+      "metadata": {}
+    },
+    {
+      "id": "e9ba0898-b7ce-4eac-acd3-fe1004ab1273",
+      "cell_type": "markdown",
+      "source": "# ACTIVITY:\n<hr style=\"border:1px solid gray\">",
+      "metadata": {}
+    },
+    {
+      "id": "41a00e2e-98ea-4bf4-9d0c-5da30e798896",
+      "cell_type": "markdown",
+      "source": "# Threshold:",
+      "metadata": {}
+    },
+    {
+      "id": "25db7485",
+      "cell_type": "markdown",
+      "source": "1. **Password Strength Checker** \n\n**Scenario:**\nYou are a junior security analyst at a company. Employees often choose weak passwords, so you need to create a simple program to check password strength. Since you only know the basics of programming, your program will use simple rules.\n\n**Requirements:**\n\n1. Ask the user to enter a password.\n\n2. If the password has fewer than 8 characters, print \"Weak\".\n\n3. If the password has 8 or more characters, print \"Moderate\".\n\n4. If the password has 12 or more characters, print \"Strong\"",
+      "metadata": {}
+    },
+    {
+      "id": "bbfc98d7",
+      "cell_type": "code",
+      "source": "# Ask the user to enter a password\npassword = input(\"Enter your password: \")\n\n# Check the length of the password and determine its strength\nif len(password) < 8:\n    print(\"Weak\")         # Password is too short\nelif len(password) < 12:\n    print(\"Moderate\")     # Password length is acceptable but not very strong\nelse:\n    print(\"Strong\")       # Password length is strong enough",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter your password:  Raghav1234\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Moderate\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "d7144500-1bcc-400a-8dbe-5c5be27972d3",
+      "cell_type": "markdown",
+      "source": "2. **Multiplication quiz**\n\nSuppose you want to develop a program to help a first-grader practice multiplication. The program randomly generates two single-digit integers, number1 and number2, and displays to the student a question such as; What is 1 * 7. After the student types the answer, the program displays a message to indicate whether it is true or false.\n\nTo generate a random number, you can use the randint(a, b) function in the random module. This function returns a random integer i between a and b, inclusively. To obtain a random integer between 0 and 9, use randint(0, 9).\n\nThe program may be set up to work as follows:\nStep 1: Randomly generate two single-digit integers for number1 (e.g., 4) and number 2 (e.g., 5)\nStep 2: Prompt the student to answer, \"What is 4 * 5?\" (user input)\nStep 3: Check whether the student’s answer is correct. ",
+      "metadata": {}
+    },
+    {
+      "id": "50fa9ed3",
+      "cell_type": "code",
+      "source": "# Step 1: Generate two random single-digit integers\nnumber1 = random.randint(0, 9)\nnumber2 = random.randint(0, 9)\n\n# Step 2: Ask the user the multiplication question\nprint(f\"What is {number1} * {number2}?\")\nanswer = int(input(\"Your answer: \"))\n\n# Step 3: Check if the answer is correct\nif answer == number1 * number2:\n    print(\"Correct! 🎉\")\nelse:\n    print(f\"Incorrect. The correct answer is {number1 * number2}.\")",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "7446a427-1530-4203-bf38-31dd68c88d73",
+      "cell_type": "markdown",
+      "source": "3. **Even or Odd** \nWrite a program that reads an integer from the user.  Then your program should display a message indicating whether the integer is even or odd. \n",
+      "metadata": {}
+    },
+    {
+      "id": "541e5d82",
+      "cell_type": "code",
+      "source": "# Ask the user for an integer\nnumber = int(input(\"Enter an integer: \"))\n\n# Check if the number is even or odd\nif number % 2 == 0:\n    print(\"The number is even.\")\nelse:\n    print(\"The number is odd.\")",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "b44198c4-4dd5-4422-9d63-7b4fa37b449a",
+      "cell_type": "markdown",
+      "source": "4. **Body mass index (BMI)** is a measure of health and weight.\n\nIt can be calculated by taking your weight in kilograms and dividing it by the square of your height in meters. The interpretation of BMI for people 20 years or older is as follows:\n\n\nBMI\tInterpretation\nBMI < 18.5\tUnderweight\n18.5 ≤ BMI ≤ 25.0\tNormal\n25.0 ≤ BMI ≤ 30.0\tOverweight\n30.0 ≤ BMI \tObese\n \nWrite a program that prompts the user to enter weight in pounds and height in inches and display the BMI. Note that one pound is 0.45359237 kilograms, and one inch is 0.0254 meters\n",
+      "metadata": {}
+    },
+    {
+      "id": "8f26dc15",
+      "cell_type": "code",
+      "source": "number = int(input(\"Enter an integer: \"))\n\n# Check if the number is even or odd\nif number % 2 == 0:\n    print(\"The number is even.\")\nelse:\n    print(\"The number is odd.\")",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "5b9406e3",
+      "cell_type": "markdown",
+      "source": "5. **Student Marks Analysis**\nYou are working as a data analyst in a school. You have the exam marks of students stored in a list. Your task is to analyze the data.\n\n**Requirements**:\n\n- Store marks of students in a list.\n\n- Use a loop to calculate the average mark.\n\n- Find the highest and lowest mark using list functions.\n\n- Print the number of students who passed (marks ≥ 50) and failed.",
+      "metadata": {}
+    },
+    {
+      "id": "59d26754",
+      "cell_type": "code",
+      "source": "# Step 1: Store marks of students in a list\nmarks = [78, 45, 89, 56, 32, 90, 67, 48, 100, 59]\n\n# Step 2: Use a loop to calculate the average mark\ntotal = 0\nfor mark in marks:\n    total += mark\naverage = total / len(marks)\n\n# Step 3: Find highest and lowest marks using list functions\nhighest = max(marks)\nlowest = min(marks)\n\n# Step 4: Count how many students passed (>=50) and failed (<50)\npassed = 0\nfailed = 0\nfor mark in marks:\n    if mark >= 50:\n        passed += 1\n    else:\n        failed += 1\n\n# Step 5: Display the results\nprint(\"Student Marks Analysis:\")\nprint(\"-------------------------\")\nprint(f\"Marks: {marks}\")\nprint(f\"Average Mark: {average:.2f}\")\nprint(f\"Highest Mark: {highest}\")\nprint(f\"Lowest Mark: {lowest}\")\nprint(f\"Number of Students Passed: {passed}\")\nprint(f\"Number of Students Failed: {failed}\")",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "cdd4d7a1-325b-4d37-9b46-8080eb0a1d6a",
+      "cell_type": "markdown",
+      "source": "6 . Display numbers from `-10` to `-1` using for loop\n\n```Expected output:\n\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n```",
+      "metadata": {}
+    },
+    {
+      "id": "11908859",
+      "cell_type": "code",
+      "source": "for number in range(-10, 0):\n    print(number)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1\n"
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "27cbba18-8d68-4a79-a5bc-9ae9d4bfaba0",
+      "cell_type": "markdown",
+      "source": "\n7. Write a program to print the following number pattern using a loop\n\n\n\n```Expected output:\n1 \n1 2 \n1 2 3 \n1 2 3 4 \n1 2 3 4 5 \n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "14a2b89d",
+      "cell_type": "code",
+      "source": "# Program to print number pattern\n\nfor i in range(1, 6):\n    for j in range(1, i + 1):\n        print(j, end=\" \")\n    print()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "1 \n1 2 \n1 2 3 \n1 2 3 4 \n1 2 3 4 5 \n"
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "e57160cd-aa2f-4667-b212-57aa463d3c17",
+      "cell_type": "markdown",
+      "source": "\n8. Calculate the sum of all numbers from `1` to a `given number`\n\nWrite a program to accept a number `n` from a user and calculate the sum of all numbers from 1 to a given number n\n\n\nFor example, if the user entered 10 the output should be 55 (1+2+3+4+5+6+7+8+9+10)\n\n```\nExpected output\nEnter the value n: 10\nThe sum of all numbers until 10 is 55\n```\n\n\n",
+      "metadata": {}
+    },
+    {
+      "id": "419bf150",
+      "cell_type": "code",
+      "source": "n = int(input(\"Enter the value n: \"))\ntotal = 0\n\nfor i in range(1, n + 1):\n    total += i\n\nprint(f\"The sum of all numbers until {n} is {total}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter the value n:  10\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The sum of all numbers until 10 is 55\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "2959ac85-18b8-42ef-8144-943a86383b61",
+      "cell_type": "markdown",
+      "source": "9. Write a program to print multiplication table of a given number\n\nFor example, `num = 2`\n\n```\nExpected output:\n\n0 x 2 = 0\n1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10\n6 x 2 = 12\n7 x 2 = 14\n8 x 2 = 16\n9 x 2 = 18\n```\n\n",
+      "metadata": {}
+    },
+    {
+      "id": "7ff75128",
+      "cell_type": "code",
+      "source": "num = int(input(\"Enter the number: \"))\n\nfor i in range(11):\n    print(f\"{i} x {num} = {i * num}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter the number:  2\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "0 x 2 = 0\n1 x 2 = 2\n2 x 2 = 4\n3 x 2 = 6\n4 x 2 = 8\n5 x 2 = 10\n6 x 2 = 12\n7 x 2 = 14\n8 x 2 = 16\n9 x 2 = 18\n10 x 2 = 20\n"
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "b407a1ce-550d-4d60-9a15-1fae3640c239",
+      "cell_type": "markdown",
+      "source": "10. Displays the following multiplication table. Consider the spacing between digits\n\n```\nExpected output:\n\n0   0   0   0   0   0   0   0   0   0 \n0   1   2   3   4   5   6   7   8   9 \n0   2   4   6   8  10  12  14  16  18 \n0   3   6   9  12  15  18  21  24  27 \n0   4   8  12  16  20  24  28  32  36 \n0   5  10  15  20  25  30  35  40  45 \n0   6  12  18  24  30  36  42  48  54 \n0   7  14  21  28  35  42  49  56  63 \n0   8  16  24  32  40  48  56  64  72 \n0   9  18  27  36  45  54  63  72  81 \n```\n\n",
+      "metadata": {}
+    },
+    {
+      "id": "18ac9145",
+      "cell_type": "code",
+      "source": "for i in range(10):\n    for j in range(10):\n        print(i * j, end=\"\\t\")\n    print()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t\n0\t1\t2\t3\t4\t5\t6\t7\t8\t9\t\n0\t2\t4\t6\t8\t10\t12\t14\t16\t18\t\n0\t3\t6\t9\t12\t15\t18\t21\t24\t27\t\n0\t4\t8\t12\t16\t20\t24\t28\t32\t36\t\n0\t5\t10\t15\t20\t25\t30\t35\t40\t45\t\n0\t6\t12\t18\t24\t30\t36\t42\t48\t54\t\n0\t7\t14\t21\t28\t35\t42\t49\t56\t63\t\n0\t8\t16\t24\t32\t40\t48\t56\t64\t72\t\n0\t9\t18\t27\t36\t45\t54\t63\t72\t81\t\n"
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "b18b9d3e-081e-4b85-b6e2-5376838d27ee",
+      "cell_type": "markdown",
+      "source": "11. Use the math.sqrt function. Write a program that prints the following table using the sqrt function in the math module.\n\n```\nNumber      Square root\n0   \t \t0.00\n2    \t\t1.41\n4    \t\t2.00\n6    \t\t2.45\n8    \t\t2.83\n10    \t\t3.16\n12    \t\t3.46\n14    \t\t3.74\n16    \t\t4.00\n18    \t\t4.24\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "c14ff3f3-1f7c-4af6-afff-a631ce09fc65",
+      "cell_type": "code",
+      "source": "import math\n\nprint(\"Number\\tSquare root\")\nfor i in range(0, 20, 2):\n    print(f\"{i}\\t{math.sqrt(i):.2f}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "Number\tSquare root\n0\t0.00\n2\t1.41\n4\t2.00\n6\t2.45\n8\t2.83\n10\t3.16\n12\t3.46\n14\t3.74\n16\t4.00\n18\t4.24\n"
+        }
+      ],
+      "execution_count": 6
+    },
+    {
+      "id": "3a808fca-f37d-4ad7-93e6-9ddacd3c56d1",
+      "cell_type": "markdown",
+      "source": "# Typical: ",
+      "metadata": {}
+    },
+    {
+      "id": "2d9756d8-52d1-48fc-b829-dda4bb5faee8",
+      "cell_type": "markdown",
+      "source": "12. **Dog Years**\n\nIt is commonly said that one human year is equivalent to 7 dog years. However, this simple conversion fails to recognise that dogs reach adulthood in approximately two years. As result, some people believe that it is better to count each of the first two human years as 10.5 dog years, and then count each additional human year as 4 dog years. \n\nWrite a program that implements the conversion from human years to dog years described in the previous paragraph. Ensure that your program works correctly for conversions of less than two or more humans’ years. Your program should display an appropriate error message if the user enters a negative number. \n",
+      "metadata": {}
+    },
+    {
+      "id": "f964094a",
+      "cell_type": "code",
+      "source": "human_years = float(input(\"Enter human years: \"))\n\nif human_years < 0:\n    print(\"Error: Age cannot be negative.\")\nelif human_years <= 2:\n    dog_years = human_years * 10.5\nelse:\n    dog_years = 21 + (human_years - 2) * 4\n\nprint(f\"The dog's age in dog years is {dog_years}\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter human years:  2\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The dog's age in dog years is 21.0\n"
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "787b5daf-d40d-42a6-9ad0-2bd46aae8a4d",
+      "cell_type": "markdown",
+      "source": "\n13. **Vowel or Constant**\n\nIn this exercise you will create a program that read a letter of the alphabet from the user. If the user enter a, e, i, o or u then your program should display a message indicating that the entered letter is a vowel. If the user enters y then your program should display a message indicating that sometimes y is a vowel, and sometimes y is a consonants.  Otherwise your program should display a message indicating that the letter is a constant. \n",
+      "metadata": {}
+    },
+    {
+      "id": "8e4e1c7e",
+      "cell_type": "code",
+      "source": "letter = input(\"Enter a letter: \").lower()\n\nif len(letter) != 1 or not letter.isalpha():\n    print(\"Please enter a single alphabet letter.\")\nelif letter in ['a', 'e', 'i', 'o', 'u']:\n    print(\"The entered letter is a vowel.\")\nelif letter == 'y':\n    print(\"Sometimes 'y' is a vowel, and sometimes 'y' is a consonant.\")\nelse:\n    print(\"The entered letter is a consonant.\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdin",
+          "text": "Enter a letter:  d\n"
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "The entered letter is a consonant.\n"
+        }
+      ],
+      "execution_count": 10
+    },
+    {
+      "id": "6b6de719-56d9-49f9-9a72-b50501011867",
+      "cell_type": "markdown",
+      "source": "14. Print the following pattern, write a program to use for loop to print the following reverse number pattern\n\n```\nExpected output:\n5 4 3 2 1 \n4 3 2 1 \n3 2 1 \n2 1 \n1\n```\n",
+      "metadata": {}
+    },
+    {
+      "id": "15c067eb",
+      "cell_type": "code",
+      "source": "for i in range(5, 0, -1):\n    for j in range(i, 0, -1):\n        print(j, end=\" \")\n    print()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "5 4 3 2 1 \n4 3 2 1 \n3 2 1 \n2 1 \n1 \n"
+        }
+      ],
+      "execution_count": 12
+    },
+    {
+      "id": "5ab4ede2-0f31-440d-a4a0-f6caee3f8299",
+      "cell_type": "markdown",
+      "source": "15. **Find the highest score**\n\nWrite a program that prompts the user to enter the number of students and each student’s name and score and display the student name and highest score.\n",
+      "metadata": {}
+    },
+    {
+      "id": "9cdf8230",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "105a0c85-96d6-4b70-8147-e92ad2f98e79",
+      "cell_type": "markdown",
+      "source": "16. Write a **guessing game** in Python where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At the end the number of tries needed should be printed.\n",
+      "metadata": {}
+    },
+    {
+      "id": "1fc03445",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "ebd7afeb-9911-4f7d-ab56-0d67b7564a99",
+      "cell_type": "markdown",
+      "source": "17. **Collecting Positive Numbers**\nYou are writing a small program to help a teacher keep track of positive numbers entered by students. The teacher also wants to know if any even numbers were given.\n\n**Requirements:**\n\n1. Keep asking the user to enter a positive number, or type `\"done\"` to stop.\n2. Store all entered numbers in a **list**.\n3. After the input ends:\n\n   * If numbers were entered:\n\n     * Print all the numbers entered.\n     * Check the list and print the **first even number**. If no even number exists, print `\"No even numbers found\"`.\n   * If no numbers were entered, print `\"No numbers were entered\"`.\n\n\n> ### Note \n>\n>* **`lower()`**: Converts any text into lowercase.\n>  Example: `\"DONE\".lower()` becomes `\"done\"`.\n>  This makes it easier to compare user input without worrying about uppercase/lowercase.\n>\n>* **`isdigit()`**: Checks if a string only contains digits (0–9).\n>  Example: `\"123\".isdigit()` returns `True`, but `\"12a\".isdigit()` returns `False`.\n>  This helps us make sure the user typed a valid number before converting it into an integer.\n> \n\n\n---",
+      "metadata": {}
+    },
+    {
+      "id": "7d8b7e82-321f-4134-aa31-a42fe8b1a553",
+      "cell_type": "markdown",
+      "source": "# Excellent:",
+      "metadata": {}
+    },
+    {
+      "id": "54a55f97-6119-42bc-8c2a-35cabae82bad",
+      "cell_type": "markdown",
+      "source": "18. Suppose you want to develop a **program to play a lottery.**\n    \nThe program randomly generates a two-digit number, prompts the user to enter a <u>two-digit number</u>, and determines whether the user wins according to the following rules:\n\n\n    1. If the user’s input matches the lottery in the exact order, the award is £10,000.\n    2. If all the digits in the user’s input match all the digits in the lottery number, the award is £3,000.\n    3. If one digit in the user’s input matches a digit in the lottery number, the award is £1,000.\n\n",
+      "metadata": {}
+    },
+    {
+      "id": "f32ea7dc",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "9bc8003e-a3cd-46e9-a5d0-6f67c88679ac",
+      "cell_type": "markdown",
+      "source": "\n19. The program prompts the user to enter a <u>three-digit number</u> and determines whether the user wins according to the following rules:\n\n    1. If the user input matches the lottery number in the exact order, the award is £10,000.\n    2. If all the digits in the user input match all the digits in the lottery number, the award is £3,000.\n    3. If one digit in the user input matches a digit in the lottery number, the award is £1,000.",
+      "metadata": {}
+    },
+    {
+      "id": "c5ed776e",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "cae37ccf-b1da-467f-96cd-974d0c34792d",
+      "cell_type": "markdown",
+      "source": "20. (Find the two highest scores) - Write a program that prompts the user to enter the number of students and each student’s score and displays the highest and second highest scores.\n",
+      "metadata": {}
+    },
+    {
+      "id": "98ae303d",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "c4428667-f77a-4da3-9c25-e2458f6db16d",
+      "cell_type": "markdown",
+      "source": "\n21. **Password cracker** - write a program to print the accuracy of password guess.\n\nFor example: The actual password is `MDX123` while a user tried `MDX321` or `mdx123`, the program should tell that how accurately the password was guessed, in this case it should be `50%` accuracy. if a user enter `MDX124`, the output should be `83%` and in case of `123MDX` the output should be `0%`.\n\nPoints to keep in mind while calculating the accuracy a) case of the letters entered b) order of the letters\n\nIf a password is accurately guessed, the output should state `Password cracked!`",
+      "metadata": {}
+    },
+    {
+      "id": "422b5fdc-8764-4fd4-8380-7d795c1b037f",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "ae892726",
+      "cell_type": "markdown",
+      "source": "---\n\n## Portfolio\nSelect one or two completed activities that best demonstrate this week’s learning. Polish the code (naming, formatting, comments) so you can commit them to Git in later weeks\n",
+      "metadata": {}
+    },
+    {
+      "id": "7bdd44e1",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
